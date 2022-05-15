@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Muestra contenido de un JSON</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-card *ngFor="let user of users">
+			<ion-card-content>
+				<p>{{user.name}}</p>
+				<p>{{user.email}}</p>
+			</ion-card-content>
+		</ion-card>
+	</ion-list>
+</ion-content>

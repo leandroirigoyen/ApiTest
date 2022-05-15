@@ -1,0 +1,6 @@
+{
+	"appId": "com.dinamico.app",
+	"appName": "myfirstionicproject",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

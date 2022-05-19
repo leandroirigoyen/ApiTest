@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button style="color: White;"></ion-menu-button>
+		  </ion-buttons>
+		<ion-title style="position: absolute; text-align: center; top: 0; left: 0; width: 100%; height: 100%">Dinamico Pedidos</ion-title>
+	</ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+<ion-row>
+		<ion-col class="ion-no-padding">
+	<ion-list style="background-color: #ffffff">
+		<ion-item style="--background: #ffffff; color: black" *ngFor="let place of pedidosService.pedidos; let i = index;">
+			<ion-col>
+				<ion-grid>
+					<ion-row>
+						{{i+1}} - {{place.nombre}} - {{place.barrio}}
+					</ion-row>
+					<ion-row>
+						<ion-col class="ion-text-center">
+							<ion-button style="--background: #2dd36f; --border-radius: 5px" expand="block" class="ion-text-wrap min-max-width" (click)="launchDialer(place.telefono)"><ion-icon name="call"></ion-icon></ion-button>
+						</ion-col>
+						<ion-col class="ion-text-center">
+							<ion-button color="secondary" expand="block" class="ion-text-wrap min-max-width" (click)="openMaps(place)"><ion-icon name="navigate"></ion-icon></ion-button>
+						</ion-col>
+						<ion-col class="ion-text-center">
+							<ion-button style="text-transform: none; --background: #F25C05;" expand="block" class="ion-text-wrap min-max-width" (click)="abrirdetalle(place)">Detalle</ion-button>
+						</ion-col>
+						<ion-col class="ion-text-center">
+							<ion-button style="text-transform: none;" color="danger" expand="block" class="ion-text-wrap min-max-width" (click)="removerPedido(i)"><ion-icon name="trash"></ion-icon></ion-button>
+						</ion-col>
+					</ion-row>
+					
+				</ion-grid>
+				
+				<style>
+					.min-max-width {
+						max-width: 200px;
+						margin: 0 auto;
+					}
+				</style>
+			</ion-col>
+		</ion-item>
+	</ion-list>
+</ion-col>
+</ion-row>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+	<ion-fab-button (click)="AgrNuevoPedido()">
+		<ion-icon name="add">
+		</ion-icon>
+	</ion-fab-button>
+</ion-fab>
+
+  </ion-content>

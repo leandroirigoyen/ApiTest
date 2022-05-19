@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-menu-button style="color: White;"></ion-menu-button>
+		<ion-button style="position: center" [routerLink]="['/perfil-u']" ><ion-icon style="color: white" name="person-circle-outline"></ion-icon></ion-button>
+	  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<h1 style="text-align:center; color: #000;">Servicios Disponibles</h1>
+	<ion-row>
+		<ion-col>
+		<ion-card style="margin-top: 10px; --background: #F1F1F1" [routerLink]="['/menu/servicios/dinamico-pedidos']">
+	<img src="https://i.imgur.com/VJWRnhp.jpg"/>
+	<ion-card-header>
+	  <ion-card-title style="color: black">Dinamico Pedidos</ion-card-title>
+	</ion-card-header>
+	<ion-card-content>
+	  Este servicio te permite agregar / organizar tus pedidos
+	  para entregarlos de manera eficiente.
+	</ion-card-content>
+  </ion-card>
+</ion-col>
+</ion-row>
+<ion-row>
+	<ion-col>
+	<ion-card style="margin-top: 10px; --background: #F1F1F1">
+<img src="https://i.imgur.com/LT9X39N.jpg"/>
+<ion-card-header>
+  <ion-card-title style="color: black">Dinamico Cadetería<br>(EN DESARROLLO)</ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  Este servicio te permite solicitar un servicio de cadetería.
+  Podrás solicitar servicios desde una moto, auto o camión.
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+<ion-row>
+	<ion-col>
+	<ion-card style="margin-top: 10px; --background: #F1F1F1">
+<img src="https://i.imgur.com/gHkvBFo.jpg"/>
+<ion-card-header>
+  <ion-card-title style="color: black">Dinamico Stocks<br>(EN DESARROLLO)</ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  Este servicio te permite tener un registro de tu stock
+  en tiempo real.
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+</ion-content>

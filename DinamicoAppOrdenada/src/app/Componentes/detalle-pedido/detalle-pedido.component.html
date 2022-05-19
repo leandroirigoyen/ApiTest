@@ -1,0 +1,105 @@
+<ion-content>
+	<ion-grid class="ion-no-padding">
+		<ion-row>
+			<ion-col>
+				
+				<ion-card>
+					<ng-container *ngIf="!isEditing">
+						<ion-card-content>
+							
+							<ion-row>
+								<h1>Fecha: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{pedidoService.detalle.fecha}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Nombre: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{pedidoService.detalle.nombre}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Barrio: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{pedidoService.detalle.barrio}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Direccion: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{pedidoService.detalle.direccion}}
+								</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Teléfono: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{pedidoService.detalle.telefono}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Productos: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{pedidoService.detalle.productos}}
+								</h1>
+							</ion-row>
+						</ion-card-content>
+					</ng-container>
+					<ng-container *ngIf="isEditing">
+						<ion-card-content>
+							<form #editingForm="ngForm" (ngSubmit)="guardarEdit(editingForm)" (keyup.enter)="guardarEdit(editingForm)">
+								<ion-item>
+									<ion-label>Fecha: </ion-label>
+									<ion-input [value]="pedidoService.detalle.fecha" name="fecha" [(ngModel)]="pedidoService.detalle.fecha"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Nombre: </ion-label>
+									<ion-input [value]="pedidoService.detalle.nombre" name="nombre" [(ngModel)]="pedidoService.detalle.nombre"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Barrio: </ion-label>
+									<ion-input [value]="pedidoService.detalle.barrio" name="barrio" [(ngModel)]="pedidoService.detalle.barrio"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Dirección: </ion-label>
+									<ion-input [value]="pedidoService.detalle.direccion" name="direccion" [(ngModel)]="pedidoService.detalle.direccion"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Teléfono: </ion-label>
+									<ion-input [value]="pedidoService.detalle.telefono" name="telefono" [(ngModel)]="pedidoService.detalle.telefono"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Productos: </ion-label>
+									<ion-input [value]="pedidoService.detalle.productos" name="productos" [(ngModel)]="pedidoService.detalle.productos"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Comentarios: </ion-label>
+									<ion-textarea [value]="pedidoService.detalle.comentarios" name="comentarios" [(ngModel)]="pedidoService.detalle.comentarios"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-textarea>
+								</ion-item>
+								<ion-button type="submit" style="--background: #0E413C; text-transform: none;" expand="block">Guardar Cambios</ion-button>
+							</form>
+						</ion-card-content>
+					</ng-container>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-row>
+		<ion-col>
+			<ion-card>
+				<ion-card-content *ngIf="!isEditing">
+					<ion-card-title style="text-align: center">Comentarios</ion-card-title>
+					<ion-row style="margin-top: 10px; background: transparent">
+						<ion-col>{{pedidoService.detalle.comentarios}}</ion-col>
+					</ion-row>
+				</ion-card-content>
+			</ion-card>
+			<ion-button style="text-transform: none; font-size: 20px;" expand="block" color="danger" (click)="onEdit()">Editar Pedido</ion-button>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		
+	</ion-row>
+	<ion-row>
+		<ion-col>
+		<ion-button style="text-transform: none;" (click)="cerrardetalle()">Cerrar</ion-button>
+	</ion-col>
+	</ion-row>
+</ion-content>

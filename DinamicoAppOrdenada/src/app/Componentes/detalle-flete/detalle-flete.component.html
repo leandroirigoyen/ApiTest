@@ -1,0 +1,101 @@
+<ion-content>
+	<ion-grid class="ion-no-padding">
+		<ion-row>
+			<ion-col>
+				<ion-card>
+					<ng-container *ngIf="!isEditing">
+						<ion-card-content>
+							<ion-row>
+								<h1>Desde: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{fletesService.detalle.desde}}</h1>
+								<ion-button style="text-transform: none; margin-right: 5px; margin-left: 5px; margin-top: -5px;font-size: 10px;position: absolute; right: 0;"  color="danger"  (click)="removerPedido(i)"><ion-icon style="font-size: 15px" name="trash"></ion-icon></ion-button>
+							</ion-row>
+							<ion-row>
+								<h1>Hacia: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{fletesService.detalle.hacia}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Fecha Límite: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{fletesService.detalle.fechalimite}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Tipo: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{fletesService.detalle.tipo}}
+								</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Tamaño: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{fletesService.detalle.tamano}}</h1>
+							</ion-row>
+							<ion-row>
+								<h1>Peso: </h1>
+								<h1 style="font-size: 1.2rem; margin: auto 10px">{{fletesService.detalle.peso}}
+								</h1>
+							</ion-row>
+						</ion-card-content>
+					</ng-container>
+					<ng-container *ngIf="isEditing">
+						<ion-card-content>
+							<form #editingForm="ngForm" (ngSubmit)="guardarEdit(editingForm)" (keyup.enter)="guardarEdit(editingForm)">
+								<ion-item>
+									<ion-label>Desde: </ion-label>
+									<ion-input [value]="fletesService.detalle.desde" name="desde" [(ngModel)]="fletesService.detalle.desde"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Hacia: </ion-label>
+									<ion-input [value]="fletesService.detalle.hacia" name="hacia" [(ngModel)]="fletesService.detalle.hacia"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Fecha Límite: </ion-label>
+									<ion-input [value]="fletesService.detalle.fechalimite" name="fechalimite" [(ngModel)]="fletesService.detalle.fechalimite"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Tipo: </ion-label>
+									<ion-input [value]="fletesService.detalle.tipo" name="tipo" [(ngModel)]="fletesService.detalle.tipo"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Tamaño: </ion-label>
+									<ion-input [value]="fletesService.detalle.tamano" name="tamano" [(ngModel)]="fletesService.detalle.tamano"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Peso: </ion-label>
+									<ion-input [value]="fletesService.detalle.peso" name="peso" [(ngModel)]="fletesService.detalle.peso"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-input>
+								</ion-item>
+								<ion-item>
+									<ion-label>Descripción: </ion-label>
+									<ion-textarea [value]="fletesService.detalle.descripcion" name="descripcion" [(ngModel)]="fletesService.detalle.descripcion"
+										style="font-size: 1.2rem; margin: auto 10px"></ion-textarea>
+								</ion-item>
+								<ion-button type="submit" style="--background: #0E413C; text-transform: none;" expand="block">Guardar Cambios</ion-button>
+							</form>
+						</ion-card-content>
+					</ng-container>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-row>
+		<ion-col>
+			<ion-card>
+				<ion-card-content *ngIf="!isEditing">
+					<ion-card-title style="text-align: center">Descripción</ion-card-title>
+					<ion-row style="margin-top: 10px; background: transparent">
+						<ion-col>{{fletesService.detalle.descripcion}}</ion-col>
+					</ion-row>
+				</ion-card-content>
+			</ion-card>
+			<ion-button style="text-transform: none; font-size: 20px;" expand="block" color="danger" (click)="onEdit()">Editar Detalles</ion-button>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+		<ion-button style="text-transform: none;" (click)="cerrardetalle()">Cerrar</ion-button>
+	</ion-col>
+	</ion-row>
+</ion-content>

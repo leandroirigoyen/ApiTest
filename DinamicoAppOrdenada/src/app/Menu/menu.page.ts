@@ -17,7 +17,7 @@ export class MenuPage implements OnInit {
 		  url: '/menu/servicios',
 		  icono: 'home'
 		},
-		{
+		 {
 		  titulo: 'Papelera',
 		  url: '/menu/entradas',
 		  icono: 'trash'

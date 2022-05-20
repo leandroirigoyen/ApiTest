@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-back-button defaultHref="/fletes"></ion-back-button>
+	</ion-buttons>
+    <ion-title>Crea tu aviso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-row>
+		<ion-col>
+			<ion-card>
+				<ion-card-content>
+					<ion-input type="text" placeholder="Desde" [(ngModel)]="flete.desde"></ion-input>
+					<ion-input type="text" placeholder="Hacia" [(ngModel)]="flete.hacia"></ion-input>
+					<ion-input type="text" placeholder="Fecha Límite" [(ngModel)]="flete.fechalimite"></ion-input>
+					<ion-input type="text" placeholder="Tipo" [(ngModel)]="flete.tipo"></ion-input>
+					<ion-input type="text" placeholder="Tamaño" [(ngModel)]="flete.tamano"></ion-input>
+					<ion-textarea  type="text" placeholder="Peso" [(ngModel)]="flete.peso"></ion-textarea>
+					<ion-textarea type="text" placeholder="Foto" [(ngModel)]="flete.foto"></ion-textarea>
+					<ion-textarea type="text" placeholder="Descripción" [(ngModel)]="flete.foto"></ion-textarea>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+	<ion-button style="text-transform: none" expand="block" (click)="guardarNuevoFlete()">Crear publicación
+	</ion-button>
+</ion-content>
+

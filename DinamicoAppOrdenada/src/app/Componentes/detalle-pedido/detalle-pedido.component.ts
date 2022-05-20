@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ModalController, NavController, } from '@ionic/angular';
+import { AlertController, ModalController,} from '@ionic/angular';
 import { PedidoService } from 'src/app/Datos(servicios)/pedido.service';
 import { NgForm } from '@angular/forms';
 import { Storage } from '@capacitor/storage';

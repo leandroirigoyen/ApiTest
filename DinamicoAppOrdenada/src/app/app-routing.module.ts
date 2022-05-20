@@ -46,6 +46,10 @@ const routes: Routes = [
 	path: 'perfil-u',
 	loadChildren: () => import('./perfil-u/perfil-u.module').then( m => m.PerfilUPageModule)
   },
+  {
+    path: 'fletes',
+    loadChildren: () => import('./Paginas/fletes/fletes.module').then( m => m.FletesPageModule)
+  },
  
 	]
 		

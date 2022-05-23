@@ -18,10 +18,14 @@ const routes: Routes = [
 		  },
 		  {
 			path: 'entradas',
-			loadChildren: () => import('../Paginas/Pagina Servicios/Servicios/dinamico-pedidos/Papelera/entradas.module').then( m => m.EntradasPageModule),
+			loadChildren: () => import('../Paginas/Pagina Servicios/Servicios/dinamico-pedidos/Papelera/entradas.module').then( m => m.EntradasPageModule)
 			
 
-	}]
+	},
+	{
+		path: 'ajustes',
+		loadChildren: () => import('../Paginas/ajustes/ajustes.module').then( m => m.AjustesPageModule)
+	  }]
 	
   }
 ];

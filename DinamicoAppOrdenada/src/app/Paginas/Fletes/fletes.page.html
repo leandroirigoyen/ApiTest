@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar style="--background: #0E413C">
+	<ion-buttons slot="start">
+		<ion-back-button style="color: white" defaultHref="/menu/servicios"></ion-back-button>
+	</ion-buttons>
+    <ion-title style="color: white; position: absolute; text-align: center; top: 0; left: 0; width: 100%; height: 100%">Fletes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-row>
+		<ion-col>
+	<ion-segment color="primary" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
+		<ion-segment-button value="disponibles" checked>
+		  <ion-label style="text-transform: none">Disponibles</ion-label>
+		  <ion-icon name="checkmark-circle-outline"></ion-icon>
+		</ion-segment-button>
+		<ion-segment-button value="en proceso">
+		  <ion-label style="text-transform: none">En proceso</ion-label>
+		  <ion-icon name="trending-up-outline"></ion-icon>
+		</ion-segment-button>
+	  </ion-segment>
+	</ion-col>
+	</ion-row>
+	  
+
+
+
+	<ion-card>
+	<ion-row>
+		<ion-col class="ion-no-padding">
+			
+	<ion-list style="background-color: #ffffff">
+		
+		<ion-item style="--background: #ffffff; color: black" *ngFor="let place of fletesService.fletes; let i = index;">
+			<ion-col>
+				<ion-grid>
+					<ion-row>
+						{{i+1}} - {{place.desde}} - {{place.hacia}}
+					</ion-row>
+						<ion-col class="ion-text-center">
+							<ion-button style="text-transform: none; --background: #F25C05;" expand="block" class="ion-text-wrap min-max-width" (click)="abrirdetalle(place)">Detalle</ion-button>
+						</ion-col>
+				</ion-grid>
+			
+				
+				<style>
+					.min-max-width {
+						max-width: 200px;
+						margin: 0 auto;
+					}
+				</style>
+			</ion-col>
+		</ion-item>
+	</ion-list>
+</ion-col>
+</ion-row>
+</ion-card>
+
+</ion-content>
+<ion-footer><ion-button style="--background: #0E413C" expand="full" (click)="AgrNuevoAviso()">Crea un nuevo aviso</ion-button></ion-footer>

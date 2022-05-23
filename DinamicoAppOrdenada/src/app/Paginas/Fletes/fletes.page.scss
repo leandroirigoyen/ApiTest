@@ -6,13 +6,3 @@ ion-button {
 ion-col {
 	padding: 0;
 }
-ion-segment-button{
-	--indicator-box-shadow: transparent!important;
-	
-	
-	
-	--background:#F1F1F1;
-	--background-checked: linear-gradient(to right, #0E413C, #F25C05)!important;
-	--color-checked: white;
-	--indicator-color : transparent!important; /* this solution */
-}

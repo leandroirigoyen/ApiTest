@@ -50,7 +50,6 @@ const routes: Routes = [
     path: 'fletes',
     loadChildren: () => import('./Paginas/fletes/fletes.module').then( m => m.FletesPageModule)
   },
- 
 	]
 		
 

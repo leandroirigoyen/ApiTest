@@ -1,26 +1,22 @@
 <ion-header>
-  <ion-toolbar style="--background: #0E413C">
+  <ion-toolbar>
 	<ion-buttons slot="start">
-		<ion-back-button style="color: white" defaultHref="/menu/servicios"></ion-back-button>
+		<ion-back-button defaultHref="/menu/servicios"></ion-back-button>
 	</ion-buttons>
-    <ion-title style="color: white; position: absolute; text-align: center; top: 0; left: 0; width: 100%; height: 100%">Fletes</ion-title>
+    <ion-title style="position: absolute; text-align: center; top: 0; left: 0; width: 100%; height: 100%">Fletes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<ion-row>
-		<ion-col>
-	<ion-segment color="primary" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
-		<ion-segment-button value="disponibles" checked>
-		  <ion-label style="text-transform: none">Disponibles</ion-label>
-		  <ion-icon name="checkmark-circle-outline"></ion-icon>
+		<ion-row>
+			<ion-segment>
+		<ion-segment-button value="all">
+		  <ion-label style="color: black" >Disponibles</ion-label>
 		</ion-segment-button>
 		<ion-segment-button value="en proceso">
-		  <ion-label style="text-transform: none">En proceso</ion-label>
-		  <ion-icon name="trending-up-outline"></ion-icon>
+		  <ion-label style="color: black">En proceso</ion-label>
 		</ion-segment-button>
-	  </ion-segment>
-	</ion-col>
+		</ion-segment>
 	</ion-row>
 	  
 
@@ -58,4 +54,4 @@
 </ion-card>
 
 </ion-content>
-<ion-footer><ion-button style="--background: #0E413C" expand="full" (click)="AgrNuevoAviso()">Crea un nuevo aviso</ion-button></ion-footer>
+<ion-footer><ion-button expand="full" (click)="AgrNuevoAviso()">Crea un nuevo aviso</ion-button></ion-footer>

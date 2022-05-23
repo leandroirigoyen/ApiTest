@@ -17,15 +17,10 @@ export class MenuPage implements OnInit {
 		  url: '/menu/servicios',
 		  icono: 'home'
 		},
-    {
-      titulo: 'Ajustes',
-      url: '/menu/ajustes',
-      icono: 'settings'
-    },
-    {
+		 {
 		  titulo: 'Papelera',
 		  url: '/menu/entradas',
-		  icono: 'trash',
+		  icono: 'trash'
 		}
 	  ]
 

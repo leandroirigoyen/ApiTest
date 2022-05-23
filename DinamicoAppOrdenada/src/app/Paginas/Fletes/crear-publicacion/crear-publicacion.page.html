@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar style="--background: #0E413C">
+  <ion-toolbar>
 	<ion-buttons slot="start">
-		<ion-back-button style="color: white" defaultHref="/fletes"></ion-back-button>
+		<ion-back-button defaultHref="/fletes"></ion-back-button>
 	</ion-buttons>
-    <ion-title style="color: white">Crea tu aviso</ion-title>
+    <ion-title>Crea tu aviso</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,13 +18,13 @@
 					<ion-input type="text" placeholder="Tipo" [(ngModel)]="flete.tipo"></ion-input>
 					<ion-input type="text" placeholder="Tamaño" [(ngModel)]="flete.tamano"></ion-input>
 					<ion-textarea  type="text" placeholder="Peso" [(ngModel)]="flete.peso"></ion-textarea>
-					<ion-label><ion-button style="text-transform: none; margin-top: -10px; margin-left: 230px;">Add photos</ion-button></ion-label>
+					<ion-textarea type="text" placeholder="Foto" [(ngModel)]="flete.foto"></ion-textarea>
 					<ion-textarea type="text" placeholder="Descripción" [(ngModel)]="flete.foto"></ion-textarea>
 				</ion-card-content>
 			</ion-card>
 		</ion-col>
 	</ion-row>
-	<ion-button style="text-transform: none; --background: #0E413C" expand="block" (click)="guardarNuevoFlete()">Crear publicación
+	<ion-button style="text-transform: none" expand="block" (click)="guardarNuevoFlete()">Crear publicación
 	</ion-button>
 </ion-content>
 

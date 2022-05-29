@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -25,6 +26,10 @@ const routes: Routes = [
 	{
 		path: 'ajustes',
 		loadChildren: () => import('../Paginas/ajustes/ajustes.module').then( m => m.AjustesPageModule)
+	  },
+	  {
+		path: 'documentos',
+		loadChildren: () => import('../Paginas/documentos/documentos.module').then( m => m.DocumentosPageModule)
 	  }]
 	
   }

@@ -1,11 +1,14 @@
 <ion-header>
-	<ion-toolbar style="text-align: right; color: white; font-size: 15px;">
+	<ion-toolbar style="text-align: center; color: white; font-size: 15px;">
+		<ion-icon style="color: white" name="person-circle-outline" style="display: inline-block; margin-left: 120px;
+	  font-size: 33px; vertical-align: middle;  color:white"
+			[routerLink]="['/perfil-u']"></ion-icon>
+			<ion-icon style="font-size: 25px; display: inline-block; vertical-align: middle; margin-left: 130px; " name="paper-plane-outline" [routerLink]="['/mensajes']"></ion-icon>
 		<ion-buttons slot="start">
 			<ion-menu-button style="color: White;"></ion-menu-button>
-		</ion-buttons>En línea
-		<ion-icon style="color: white" name="person-circle-outline" style="display: inline-block;
-	  font-size: 33px; vertical-align: middle; margin-right: 10px; margin-left: 5px; color:white"
-			[routerLink]="['/perfil-u']"></ion-icon>
+		</ion-buttons>
+		
+		
 	</ion-toolbar>
 </ion-header>
 

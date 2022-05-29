@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./Paginas/Registros/registro-u/registro.module').then( m => m.RegistroPageModule),
 	canActivate: [NoIngresadoGuard]
 	},
-	
+
   {
     path: 'respuestaservidor',
     loadChildren: () => import('./respuestaserver/respuestaserver.module').then( m => m.RespuestaserverPageModule)
@@ -50,8 +50,13 @@ const routes: Routes = [
     path: 'fletes',
     loadChildren: () => import('./Paginas/fletes/fletes.module').then( m => m.FletesPageModule)
   },
-	]
-		
+  {
+    path: 'mensajes',
+    loadChildren: () => import('./Paginas/mensajes/mensajes.module').then( m => m.MensajesPageModule)
+  },
+
+	];
+
 
 
 

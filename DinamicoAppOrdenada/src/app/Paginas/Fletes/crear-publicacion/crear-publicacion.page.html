@@ -1,30 +1,126 @@
 <ion-header>
-  <ion-toolbar style="--background: #0E413C">
-	<ion-buttons slot="start">
-		<ion-back-button style="color: white" defaultHref="/fletes"></ion-back-button>
-	</ion-buttons>
+  <ion-toolbar style="--background: #0e413c">
+    <ion-buttons slot="start">
+      <ion-back-button
+        style="color: white"
+        defaultHref="/fletes"
+      ></ion-back-button>
+    </ion-buttons>
     <ion-title style="color: white">Crea tu aviso</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<ion-row>
-		<ion-col>
-			<ion-card>
-				<ion-card-content>
-					<ion-input type="text" placeholder="Desde" [(ngModel)]="flete.desde"></ion-input>
-					<ion-input type="text" placeholder="Hacia" [(ngModel)]="flete.hacia"></ion-input>
-					<ion-input type="text" placeholder="Fecha Límite" [(ngModel)]="flete.fechalimite"></ion-input>
-					<ion-input type="text" placeholder="Tipo" [(ngModel)]="flete.tipo"></ion-input>
-					<ion-input type="text" placeholder="Tamaño" [(ngModel)]="flete.tamano"></ion-input>
-					<ion-textarea  type="text" placeholder="Peso" [(ngModel)]="flete.peso"></ion-textarea>
-					<ion-label><ion-button style="text-transform: none; margin-top: -10px; margin-left: 230px;">Add photos</ion-button></ion-label>
-					<ion-textarea type="text" placeholder="Descripción" [(ngModel)]="flete.foto"></ion-textarea>
-				</ion-card-content>
-			</ion-card>
-		</ion-col>
-	</ion-row>
-	<ion-button style="text-transform: none; --background: #0E413C" expand="block" (click)="guardarNuevoFlete()">Crear publicación
-	</ion-button>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>Desde</ion-label>
+            <ion-select interface="popover" [(ngModel)]="flete.desde">
+              <ion-select-option value="Artigas">Artigas</ion-select-option>
+              <ion-select-option value="Canelones">Canelones</ion-select-option>
+              <ion-select-option value="Cerro Largo"
+                >Cerro Largo</ion-select-option
+              >
+              <ion-select-option value="Colonia">Colonia</ion-select-option>
+              <ion-select-option value="Durazno">Durazno</ion-select-option>
+              <ion-select-option value="Flores">Flores</ion-select-option>
+              <ion-select-option value="Florida">Florida</ion-select-option>
+              <ion-select-option value="Lavalleja">Lavalleja</ion-select-option>
+              <ion-select-option value="Maldonado">Maldonado</ion-select-option>
+              <ion-select-option value="Montevideo"
+                >Montevideo</ion-select-option
+              >
+              <ion-select-option value="Paysandú">Paysandú</ion-select-option>
+              <ion-select-option value="Río Negro">Río Negro</ion-select-option>
+              <ion-select-option value="Rivera">Rivera</ion-select-option>
+              <ion-select-option value="Rocha">Rocha</ion-select-option>
+              <ion-select-option value="Salto">Salto</ion-select-option>
+              <ion-select-option value="San José">San José</ion-select-option>
+              <ion-select-option value="Soriano">Soriano</ion-select-option>
+              <ion-select-option value="Tacuarembó"
+                >Tacuarembó</ion-select-option
+              >
+              <ion-select-option value="Treinta y Tres"
+                >Treinta y Tres</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Hacia</ion-label>
+            <ion-select interface="popover" [(ngModel)]="flete.hacia">
+              <ion-select-option value="Artigas">Artigas</ion-select-option>
+              <ion-select-option value="Canelones">Canelones</ion-select-option>
+              <ion-select-option value="Cerro Largo"
+                >Cerro Largo</ion-select-option
+              >
+              <ion-select-option value="Colonia">Colonia</ion-select-option>
+              <ion-select-option value="Durazno">Durazno</ion-select-option>
+              <ion-select-option value="Flores">Flores</ion-select-option>
+              <ion-select-option value="Florida">Florida</ion-select-option>
+              <ion-select-option value="Lavalleja">Lavalleja</ion-select-option>
+              <ion-select-option value="Maldonado">Maldonado</ion-select-option>
+              <ion-select-option value="Montevideo"
+                >Montevideo</ion-select-option
+              >
+              <ion-select-option value="Paysandú">Paysandú</ion-select-option>
+              <ion-select-option value="Río Negro">Río Negro</ion-select-option>
+              <ion-select-option value="Rivera">Rivera</ion-select-option>
+              <ion-select-option value="Rocha">Rocha</ion-select-option>
+              <ion-select-option value="Salto">Salto</ion-select-option>
+              <ion-select-option value="San José">San José</ion-select-option>
+              <ion-select-option value="Soriano">Soriano</ion-select-option>
+              <ion-select-option value="Tacuarembó"
+                >Tacuarembó</ion-select-option
+              >
+              <ion-select-option value="Treinta y Tres"
+                >Treinta y Tres</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+          <ion-input
+            type="text"
+            placeholder="Fecha Límite"
+            [(ngModel)]="flete.fechalimite"
+          ></ion-input>
+          <ion-input
+            type="text"
+            placeholder="Tipo"
+            [(ngModel)]="flete.tipo"
+          ></ion-input>
+          <ion-item
+            >Tamaño
+            <ion-icon name="cube-outline"></ion-icon>
+          </ion-item>
+          <ion-textarea
+            type="text"
+            placeholder="Peso"
+            [(ngModel)]="flete.peso"
+          ></ion-textarea>
+          <ion-label
+            ><ion-button
+              style="
+                text-transform: none;
+                margin-top: -10px;
+                margin-left: 230px;
+              "
+              >Add photos</ion-button
+            ></ion-label
+          >
+          <ion-textarea
+            type="text"
+            placeholder="Descripción"
+            [(ngModel)]="flete.foto"
+          ></ion-textarea>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-button
+    style="text-transform: none; --background: #0e413c"
+    expand="block"
+    (click)="guardarNuevoFlete()"
+    >Crear publicación
+  </ion-button>
 </ion-content>
-

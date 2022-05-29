@@ -1,53 +1,85 @@
 <ion-header>
-	<ion-toolbar>
-		<ion-title>Registro</ion-title>
-	  <ion-buttons slot="start">
-		<ion-back-button></ion-back-button>
-	  </ion-buttons>
-	</ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-	<ion-card  style="margin-top: 30px">
-	
-	  <ion-card-content>
-		<form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
-		  <ion-item lines="5">
-			<ion-label position="floating">Nombre</ion-label>
-			<ion-input formControlName="nombre"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Apellido</ion-label>
-			<ion-input formControlName="apellido"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Mail</ion-label>
-			<ion-input formControlName="mail"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Móvil</ion-label>
-			<ion-input formControlName="movil"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Foto cédula frente</ion-label>
-			<ion-input formControlName="cedulafrente"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Foto cédula dorso</ion-label>
-			<ion-input formControlName="ceduladorso"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Contraseña</ion-label>
-			<ion-input formControlName="password" type="password" ></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">Confirmar contraseña</ion-label>
-			<ion-input formControlName="confirmacionPassword" type="password"></ion-input>
-		  </ion-item>
-		  <br>
-		  <ion-button style="--background: #0E413C; text-transform: none;" expand="block" (click)="guardar()">Registrarse
-		  </ion-button>
-		</form>
-	  </ion-card-content>
-	</ion-card>
-  </ion-content>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin-top: 50px">
+    <ion-card-content>
+      <form
+        #formularioRegistro="ngForm"
+        (ngSubmit)="guardar(formularioRegistro)"
+        (keyup.enter)="guardar(formularioRegistro)"
+      >
+        <ion-item lines="5">
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input
+            name="nombre"
+            (blur)="revisarNombre()"
+            [(ngModel)]="registroPrestador.nombre"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input
+            name="apellido"
+            (blur)="revisarApellido()"
+            [(ngModel)]="registroPrestador.apellido"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Mail</ion-label>
+          <ion-input
+            name="mail"
+            (blur)="revisarMail()"
+            [(ngModel)]="registroPrestador.mail"
+            email
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Móvil</ion-label>
+          <ion-input
+            name="movil"
+            (blur)="revisarMovil()"
+            [(ngModel)]="registroPrestador.movil"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input
+            name="password"
+            type="password"
+            (blur)="revisarPassword()"
+            [(ngModel)]="registroPrestador.password"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña</ion-label>
+          <ion-input
+            name="confirmacionPassword"
+            type="password"
+            (blur)="revisarconfirmarPassword()"
+            [(ngModel)]="registroPrestador.confirmarpassword"
+            required
+          ></ion-input>
+        </ion-item>
+        <br />
+        <ion-button
+          type="submit"
+          style="--background: #0e413c; text-transform: none"
+          expand="block"
+          >Registrarse
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

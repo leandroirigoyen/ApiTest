@@ -13,11 +13,11 @@ export class RegistroPage implements OnInit {
 
 	registroUsuario: RegistroUsuario = new RegistroUsuario();
 
-  
+
   constructor(public alertController: AlertController,
 	public navCtrl: NavController,) {
-    
-    
+
+
   }
 
   ngOnInit() {
@@ -30,10 +30,10 @@ export class RegistroPage implements OnInit {
 			message: 'Tienes que llenar todos los datos',
 			buttons: ['Aceptar']
 		  });
-	  
+
 		  await alert.present();
 	  }
-	  
+
   }
   async revisarApellido(){
 	if(this.registroUsuario.apellido == null){
@@ -42,10 +42,10 @@ export class RegistroPage implements OnInit {
 		  message: 'Tienes que llenar todos los datos',
 		  buttons: ['Aceptar']
 		});
-	
+
 		await alert.present();
 	}
-	
+
 }
 async revisarMail(){
 	if(this.registroUsuario.mail == null){
@@ -54,10 +54,10 @@ async revisarMail(){
 		  message: 'Tienes que llenar todos los datos',
 		  buttons: ['Aceptar']
 		});
-	
+
 		await alert.present();
 	}
-	
+
 }
 async revisarMovil(){
 	if(this.registroUsuario.movil == null){
@@ -66,10 +66,10 @@ async revisarMovil(){
 		  message: 'Tienes que llenar todos los datos',
 		  buttons: ['Aceptar']
 		});
-	
+
 		await alert.present();
 	}
-	
+
 }
 async revisarPassword(){
 	if(this.registroUsuario.password == null){
@@ -78,10 +78,10 @@ async revisarPassword(){
 		  message: 'Tienes que llenar todos los datos',
 		  buttons: ['Aceptar']
 		});
-	
+
 		await alert.present();
 	}
-	
+
 }
 async revisarconfirmarPassword(){
 	if(this.registroUsuario.confirmarpassword !== this.registroUsuario.password){
@@ -90,33 +90,33 @@ async revisarconfirmarPassword(){
 		  message: 'Las contraseñas no coinciden',
 		  buttons: ['Aceptar']
 		});
-	
+
 		await alert.present();
 	}
-	
+
 }
 async guardar(formularioRegistro: NgForm){
 
-	console.log(formularioRegistro)
+	console.log(formularioRegistro);
     if(formularioRegistro.invalid){
       const alert = await this.alertController.create({
         header: 'Datos incompletos',
         message: 'Tienes que llenar todos los datos',
         buttons: ['Aceptar']
       });
-  
+
       await alert.present();
       return;
     }
 
-    var usuario = {
+    const usuario = {
       nombre: formularioRegistro.value.nombre,
 	  apellido: formularioRegistro.value.apellido,
 	  mail: formularioRegistro.value.mail,
 	  movil: formularioRegistro.value.movil,
       password: formularioRegistro.value.password,
 	  confirmacionPassword: formularioRegistro.value.confirmacionPassword
-    }
+    };
 
 	const key = 'usuario';
     Storage.set({key,value:JSON.stringify(usuario)});

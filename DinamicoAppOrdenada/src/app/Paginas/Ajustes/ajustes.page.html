@@ -1,9 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ajustes</ion-title>
+  <ion-toolbar style="--background: #0E413C">
+    <ion-title style="color: White; text-align: center; position: absolute;top: 0; left: 0; width: 100%; height: 100%">Ajustes</ion-title>
+    <ion-buttons slot="start">
+			<ion-back-button style="color: white;" defaultHref="/menu/servicios"></ion-back-button>
+		</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<ion-row>
+  <ion-col>
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Notificaciones</ion-label>
+          <ion-toggle slot="start" name="blueberry" checked></ion-toggle>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
 </ion-content>

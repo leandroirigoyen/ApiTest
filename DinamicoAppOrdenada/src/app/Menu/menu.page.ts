@@ -9,13 +9,18 @@ import { Storage } from '@capacitor/storage';
 })
 export class MenuPage implements OnInit {
 
-	indiceSeleccionado: number = 0;
+	indiceSeleccionado = 0;
 
 	paginas = [
 		{
 		  titulo: 'Inicio',
 		  url: '/menu/servicios',
 		  icono: 'home'
+		},
+    {
+		  titulo: 'Documentos',
+		  url: '/menu/documentos',
+		  icono: 'document'
 		},
     {
       titulo: 'Ajustes',
@@ -27,7 +32,7 @@ export class MenuPage implements OnInit {
 		  url: '/menu/entradas',
 		  icono: 'trash',
 		}
-	  ]
+	  ];
 
   constructor(private alertController: AlertController,
 	private navCtrl: NavController) { }
@@ -53,7 +58,7 @@ export class MenuPage implements OnInit {
 		  },
         {
           text: 'No',
-        }, 
+        },
       ]
     });
 
